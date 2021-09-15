@@ -1,0 +1,34 @@
+local M = {}
+
+local function ends_with(str, ending)
+    return ending == "" or str:sub(-#ending) == ending
+end
+
+function M.get_commands()
+    return {
+        {
+            label="Select Target",
+            locations = {"Assets"},
+            query = {
+                selection = {type = "resource", cardinality = "one"}
+            },
+            active = function(opts)
+                local path = editor.get(opts.selection, "path")
+
+                return ends_with(path, ".target")
+            end,
+            run = function(opts)
+                local path = editor.get(opts.selection, "path")
+
+                return {
+                    {
+                        action = "shell",
+                        command = {"python3", "-u", "-c", editor.get("/dsts/py/select_target.py", "text"), path:sub(2)}
+                    }
+                }
+            end
+        }
+    }
+end
+
+return M

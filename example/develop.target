@@ -1,0 +1,10 @@
+; base_targets/debug.base_target
+
+[project]
+version = 0.1.0-dev
+dependencies#0 = https://github.com/britzl/defold-input/archive/master.zip
+dependencies#1 = https://github.com/britzl/defold-metrics/archive/master.zip
+
+[bootstrap]
+main_collection = /example/bootstrap/develop.collectionc
+

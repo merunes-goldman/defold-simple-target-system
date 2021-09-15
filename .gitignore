@@ -8,3 +8,7 @@ Thumbs.db
 .project
 .cproject
 builtins
+.idea
+.mypy_cache
+*.egg-info
+venv

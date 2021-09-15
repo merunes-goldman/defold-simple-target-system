@@ -1,6 +1,4 @@
-[project]
-title = dsts
-version = 0.1.0
+; base_targets/core.base_target
 
 [bootstrap]
 main_collection = /example/bootstrap/release.collectionc
