@@ -23,7 +23,7 @@ function M.get_commands()
                 return {
                     {
                         action = "shell",
-                        command = {"python3", "-u", "-c", editor.get("/dsts/py/select_target.py", "text"), path:sub(2)}
+                        command = {"python3", "-u", "-c", editor.get("/dsts/impl/target_selector.py", "text"), path:sub(2)}
                     }
                 }
             end
